@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FBB00170-404E-4797-B673-3B390186EED6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RPNames</RootNamespace>
+    <AssemblyName>RPNames</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <LangVersion>9</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\Desktop\exileddo\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Desktop\exileddo\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\Desktop\exileddo\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\CommandSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient">
+      <HintPath>..\..\..\..\Desktop\exileddo\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.API, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CreditTags, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.CreditTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomItems, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.CustomItems.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomRoles, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.CustomRoles.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Events, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Loader, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Permissions, Version=9.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\Exiled.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\..\..\Desktop\exileddo\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mirror.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror-Publicized">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mirror-Publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror.Components">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mirror.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\Desktop\exileddo\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\..\..\Desktop\exileddo\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="NorthwoodLib, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\NorthwoodLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginAPI, Version=13.1.5.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\PluginAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Pooling">
+      <HintPath>..\..\..\..\Desktop\exileddo\Pooling.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\exileddo\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel.Internals, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\exileddo\System.ServiceModel.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Burst">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Csg">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.ProBuilder.Csg.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.KdTree">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.ProBuilder.KdTree.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Poly2Tri">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.ProBuilder.Poly2Tri.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Stl">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.ProBuilder.Stl.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>..\..\..\..\Desktop\exileddo\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.NVIDIAModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\..\..\Desktop\exileddo\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExMod.Exiled.9.5.0\lib\net48\YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing">
+      <HintPath>..\..\..\..\Desktop\exileddo\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventHandlers.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translations.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\0Harmony.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Assembly-CSharp-firstpass.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Assembly-CSharp-Publicized.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Assembly-CSharp.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\DnsClient.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Facepunch.Steamworks.Win64.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mirror-Publicized.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mirror.Components.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mirror.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mono.Cecil.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mono.Cecil.Mdb.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mono.Cecil.Pdb.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mono.Cecil.Rocks.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mono.Posix.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Mono.Security.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\netstandard.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Pooling.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.ComponentModel.Composition.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.ComponentModel.DataAnnotations.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Configuration.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Drawing.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.EnterpriseServices.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.IO.Compression.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.IO.Compression.FileSystem.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Numerics.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Runtime.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Runtime.Serialization.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Security.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.ServiceModel.Internals.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\System.Transactions.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.Burst.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.Burst.Unsafe.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.Mathematics.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.ProBuilder.Csg.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.ProBuilder.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.ProBuilder.KdTree.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.ProBuilder.Poly2Tri.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.ProBuilder.Stl.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.Core.Runtime.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.Core.ShaderLibrary.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.HighDefinition.Runtime.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.TextMeshPro.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.Timeline.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\Unity.VisualEffectGraph.Runtime.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.AccessibilityModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.AIModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.AndroidJNIModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.AnimationModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ARModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.AssetBundleModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.AudioModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ClothModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ClusterInputModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ClusterRendererModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.CoreModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.CrashReportingModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.DirectorModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.DSPGraphModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.GameCenterModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.GIModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.GridModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.HotReloadModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ImageConversionModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.IMGUIModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.InputLegacyModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.InputModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.JSONSerializeModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.LocalizationModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.NVIDIAModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ParticleSystemModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.PerformanceReportingModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.Physics2DModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.PhysicsModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ProfilerModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.ScreenCaptureModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.SharedInternalsModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.SpriteMaskModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.SpriteShapeModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.StreamingModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.SubstanceModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.SubsystemsModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TerrainModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TerrainPhysicsModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TextCoreFontEngineModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TextCoreTextEngineModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TextRenderingModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TilemapModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.TLSModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UI.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UIElementsModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UIElementsNativeModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UIModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UmbraModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UNETModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityAnalyticsCommonModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityAnalyticsModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityConnectModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityCurlModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityTestProtocolModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestAssetBundleModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestAudioModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestTextureModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.UnityWebRequestWWWModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.VehiclesModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.VFXModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.VideoModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.VirtualTexturingModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.VRModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.WindModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\UnityEngine.XRModule.dll" />
+    <Analyzer Include="..\..\..\..\Desktop\exileddo\zxing.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
