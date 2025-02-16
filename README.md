@@ -13,3 +13,6 @@ ShouldNotifyPlayer | Should the plugin let the player know their name? (With a b
 ShouldBeHint | Should the notification be a hint instead of a broadcast?
 
 You will also find a list of the most common english names inside translation's yml file. You can add and remove as many names as you want.
+
+You can find a list of premade localizations [here](https://github.com/An4r3w/RPNames/tree/master/Localization).
+If you wish to contribute, create a pull request or send your .yml file inside a thread on the discord RPNames channel.
