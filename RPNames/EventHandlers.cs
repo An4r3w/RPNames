@@ -100,6 +100,6 @@ namespace RPPNames
             }
         }
 
-        private Random random = new Random();
+        private readonly Random random = new();
     }
 }
