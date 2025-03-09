@@ -6,7 +6,9 @@ namespace RPPNames.Configs
     public class Config : IConfig
     {
         public bool IsEnabled { get; set; } = true;
+
         public bool Debug { get; set; } = false;
+
         public bool ShowRealName { get; set; } = false;
 
         [Description("Should the plugin let the player know their name? (With a broadcast, if ShouldBeHint is set to false)")]
